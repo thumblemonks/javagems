@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
+require 'bundler'
 
 module Gem
   DefaultGemConfigName = ".javagemrc"
@@ -28,6 +29,16 @@ class Gem::AbstractCommand < Gem::Command
   if defined?(DESTINATION_NAME)
     remove_const :DESTINATION_NAME
     DESTINATION_NAME = "JavaGems"
+  end
+
+end
+
+class Bundler::Environment
+
+private
+
+  def default_sources
+    [GemSource.new(:uri => "http://gems.javagems.org"), SystemGemSource.instance]
   end
 
 end
