@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.1.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["ggironda", "jaknowlden"]
-  s.date = %q{2009-11-11}
+  s.authors = ["gabrielg", "jaknowlden"]
+  s.date = %q{2009-11-14}
   s.description = %q{Provides gem-esque support to Java}
   s.email = %q{gabriel.gironda@gmail.com}
   s.executables = ["javagem", "javagem"]
@@ -30,7 +30,14 @@ Gem::Specification.new do |s|
      "bin/javagem",
      "jar/.gitignore",
      "jar/javagems.jar",
-     "lib/javagems.rb"
+     "javagems.gemspec",
+     "lib/javagems.rb",
+     "lib/javagems/commands/javagem_command.rb",
+     "lib/javagems/gem_overrides.rb",
+     "lib/rubygems/commands/jeweler_command.rb",
+     "test/gem_overrides_test.rb",
+     "test/jeweler_command_test.rb",
+     "test/test_helper.rb"
   ]
   s.homepage = %q{http://www.javagems.org/}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -43,9 +50,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<gemcutter>, [">= 0"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<riot>, [">= 0"])
     else
+      s.add_dependency(%q<gemcutter>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<riot>, [">= 0"])
     end
   else
+    s.add_dependency(%q<gemcutter>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<riot>, [">= 0"])
   end
 end
 
