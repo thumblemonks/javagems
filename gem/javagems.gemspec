@@ -28,8 +28,6 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/javagem",
-     "jar/.gitignore",
-     "jar/javagems.jar",
      "javagems.gemspec",
      "lib/javagems.rb",
      "lib/javagems/commands/javagem_command.rb",
