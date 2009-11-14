@@ -10,15 +10,19 @@ begin
     gem.description = %Q{Provides gem-esque support to Java}
     gem.email = "gabriel.gironda@gmail.com"
     gem.homepage = "http://www.javagems.org/"
-    gem.authors = ["ggironda", "jaknowlden"]
+    gem.authors = ["gabrielg", "jaknowlden"]
     gem.files.include "jar/*"
+    gem.add_dependency "gemcutter"
+    gem.add_dependency "jeweler"
+    gem.add_development_dependency "riot"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
 
-task :default => :build
+task :test => :check_dependencies
+task :default => :test
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
@@ -30,3 +34,9 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+require 'rake/testtask'
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/*_test.rb'
+  test.verbose = true
+end
