@@ -43,21 +43,13 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{A gem for the javagems system}
 
-  if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
+  s.specification_version = 3 if s.respond_to? :specification_version
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<gemcutter>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<bundler>, [">= 0"])
-      s.add_development_dependency(%q<riot>, [">= 0"])
-    else
-      s.add_dependency(%q<gemcutter>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<bundler>, [">= 0"])
-      s.add_dependency(%q<riot>, [">= 0"])
-    end
+  if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    s.add_runtime_dependency(%q<gemcutter>, [">= 0"])
+    s.add_runtime_dependency(%q<jeweler>, [">= 0"])
+    s.add_runtime_dependency(%q<bundler>, [">= 0"])
+    s.add_development_dependency(%q<riot>, [">= 0"])
   else
     s.add_dependency(%q<gemcutter>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])

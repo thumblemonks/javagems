@@ -9,7 +9,6 @@ Gem::CommandManager.instance.register_command :jeweler
 
 required_version = Gem::Requirement.new "> 1.8.3"
 
-
 unless required_version.satisfied_by? Gem.ruby_version then
   abort "Expected Ruby Version #{required_version}, was #{Gem.ruby_version}"
 end
