@@ -11,7 +11,6 @@ begin
     gem.email = "gabriel.gironda@gmail.com"
     gem.homepage = "http://www.javagems.org/"
     gem.authors = ["gabrielg", "jaknowlden"]
-    gem.files.include "jar/*"
     gem.add_dependency "gemcutter"
     gem.add_dependency "jeweler"
     gem.add_development_dependency "riot"
