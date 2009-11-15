@@ -23,6 +23,7 @@ class Gem::Commands::ClasspathCommand < Gem::Command
       say(cp)
     end
   rescue => e
+    alert_error(e.message)
     @hijacked_out.readlines.each { |l| alert_error(l.strip) }
     exit 1
   end
