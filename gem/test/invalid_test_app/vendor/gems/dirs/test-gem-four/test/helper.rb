@@ -1,9 +1,10 @@
 require 'rubygems'
-require 'riot'
-require 'pathname'
-require 'stringio'
-
-TestRoot = Pathname(__FILE__).parent
+require 'test/unit'
+require 'shoulda'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'test-gem-four'
+
+class Test::Unit::TestCase
+end
