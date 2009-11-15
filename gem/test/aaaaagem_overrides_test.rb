@@ -1,4 +1,6 @@
 require 'test_helper'
+# FIXME - ahahaha this test filename is a stupid hack so this test always runs last
+# and doesn't run all the other tests.
 
 # We fork here so we don't mess up the current Gem environment
 # in the process of running our tests, because that's what

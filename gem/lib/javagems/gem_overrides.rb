@@ -38,7 +38,7 @@ class Bundler::Environment
 private
 
   def default_sources
-    [GemSource.new(:uri => "http://gems.javagems.org"), SystemGemSource.instance]
+    [Bundler::GemSource.new(:uri => "http://gems.javagems.org"), Bundler::SystemGemSource.instance]
   end
 
 end

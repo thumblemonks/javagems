@@ -2,10 +2,14 @@
 require 'rubygems'
 require 'javagems/commands/javagem_command'
 require 'rubygems/command_manager'
-$: << File.dirname(__FILE__)
+require 'pathname'
+$: << (Pathname(__FILE__).parent.parent + "lib").expand_path.to_s
+
 require "rubygems/commands/jeweler_command"
+require "rubygems/commands/classpath_command"
 
 Gem::CommandManager.instance.register_command :jeweler
+Gem::CommandManager.instance.register_command :classpath
 
 required_version = Gem::Requirement.new "> 1.8.3"
 
