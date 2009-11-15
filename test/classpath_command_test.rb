@@ -8,7 +8,8 @@ context "the classpath command" do
     setup do
       @command = Gem::Commands::ClasspathCommand.new
       # FIXME - ghetto-mock
-      def @command.sources
+      cp_builder = @command.cp_builder
+      def cp_builder.sources
         [Bundler::DirectorySource.new(:location => (TestRoot + "valid_test_app/vendor").expand_path.to_s)]
       end
     end
@@ -27,7 +28,8 @@ context "the classpath command" do
     setup do
       @command = Gem::Commands::ClasspathCommand.new
       # FIXME - ghetto-mock
-      def @command.sources
+      cp_builder = @command.cp_builder
+      def cp_builder.sources
         [Bundler::DirectorySource.new(:location => (TestRoot + "invalid_test_app/vendor").expand_path.to_s)]
       end
 
