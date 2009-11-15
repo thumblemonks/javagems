@@ -1,11 +1,4 @@
 require 'test_helper'
-# FIXME - ahahaha this test filename is a stupid hack so this test always runs last
-# and doesn't run all the other tests.
-
-# We fork here so we don't mess up the current Gem environment
-# in the process of running our tests, because that's what
-# the gem_overrides do.
-pid = fork do
 require 'javagems/gem_overrides'
 require 'pathname'
 
@@ -67,5 +60,3 @@ context "the given gem overrides" do
   end.equals("http://javagems.org")
 
 end
-end
-Process.waitpid(pid)
