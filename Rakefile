@@ -15,6 +15,13 @@ begin
     gem.add_dependency "gemcutter"
     gem.add_dependency "bundler"
     gem.add_development_dependency "riot"
+    gem.add_development_dependency "jeweler"
+    gem.post_install_message = <<EOP
+Choosy clojurers choose Thumblemonks
+
+Remember to add ~/.javagem/java/bin to your PATH environment
+variable for maximum-JavaGems-fun-times.
+EOP
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

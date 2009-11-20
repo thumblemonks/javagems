@@ -116,6 +116,11 @@ Gem::Specification.new do |s|
      "test/valid_test_app/vendor/gems/specifications/test-gem-two-0.0.0.gemspec"
   ]
   s.homepage = %q{http://www.javagems.org/}
+  s.post_install_message = %q{Choosy clojurers choose Thumblemonks
+
+Remember to add ~/.javagem/java/bin to your PATH environment
+variable for maximum-JavaGems-fun-times.
+}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
@@ -157,15 +162,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<gemcutter>, [">= 0"])
       s.add_runtime_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<riot>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<gemcutter>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<riot>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<gemcutter>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<riot>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
