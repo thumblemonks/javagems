@@ -9,8 +9,10 @@ module JavaGems
         bundler_env = Bundler::Environment.load(gemfile)
         deps = bundler_env.dependencies.map {|dep| dep.to_gem_dependency }
         cp = Bundler::Resolver.resolve(deps, sources).collect do |spec|
-          (Pathname(spec.full_gem_path) + "lib").expand_path.to_s
-        end.join(File::PATH_SEPARATOR)
+          spec.require_paths.collect do |req_path|
+            (Pathname(spec.full_gem_path) + req_path).expand_path.to_s
+          end
+        end.flatten.join(File::PATH_SEPARATOR)
       end
 
     rescue => e
