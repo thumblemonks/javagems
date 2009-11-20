@@ -20,7 +20,8 @@ module Gem
     :gempath  => [File.join(Gem.user_home, ".javagem/java")]
   )
 
-  @configuration = nil # To force Gem to re-read the config
+  self.configuration = nil # To force Gem to re-read the config
+  self.clear_paths # And clear out our paths so they're re-read
 end
 
 class Gem::AbstractCommand < Gem::Command

@@ -31,7 +31,7 @@ module JavaGems
 
     # FIXME - Until we have actual bundler support, use the Gem home source index.
     def sources
-      [Bundler::DirectorySource.new(:location => Gem.configuration.home)]
+      [Bundler::SystemGemSource.instance]
     end
 
   end # ClasspathBuilder
