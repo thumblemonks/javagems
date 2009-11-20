@@ -1,2 +1,9 @@
 #!/usr/bin/env ruby
-exec("javagem-exec", "java", *ARGV)
+
+custom_classpath = ["-cp", "-classpath"].map do |option|
+  classpath_idx = ARGV.index(option)
+  ARGV.slice!(classpath_idx..(classpath_idx + 1)).last if classpath_idx
+end
+
+ENV["CLASSPATH"] = [ENV["CLASSPATH"], custom_classpath].compact.join(File::PATH_SEPARATOR)
+exec("javaexec", "java", *ARGV)

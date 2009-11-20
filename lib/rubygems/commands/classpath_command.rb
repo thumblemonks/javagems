@@ -3,6 +3,14 @@ require 'bundler'
 require 'javagems/classpath_builder'
 require 'stringio'
 
+class Gem::StreamUI
+  def print(str) @outs.print(str); end
+end
+
+Gem::UserInteraction.class_eval do
+  def print(str) ui.print(str); end
+end
+
 class Gem::Commands::ClasspathCommand < Gem::Command
   attr_reader :cp_builder
 
@@ -16,7 +24,7 @@ class Gem::Commands::ClasspathCommand < Gem::Command
   end
 
   def execute
-    say(@cp_builder.classpath_for(options[:args].first))
+    print(@cp_builder.classpath_for(options[:args].first))
   rescue => e
     alert_error(e.message)
     exit 1
