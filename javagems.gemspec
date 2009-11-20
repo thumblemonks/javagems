@@ -5,14 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.4.4"
+  s.version = "0.4.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["gabrielg", "jaknowlden"]
   s.date = %q{2009-11-19}
   s.description = %q{Provides gem-esque support to Java}
   s.email = %q{gabriel.gironda@gmail.com}
-  s.executables = ["javagem", "javagem-exec", "javagem", "javagem-exec"]
+  s.executables = ["javagem", "javagem-exec", "jem", "jemc"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/javagem",
      "bin/javagem-exec",
+     "bin/jem",
+     "bin/jemc",
      "javagems.gemspec",
      "lib/javagems.rb",
      "lib/javagems/classpath_builder.rb",

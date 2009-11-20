@@ -5,8 +5,6 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "javagems"
-    gem.executables << "javagem"
-    gem.executables << "javagem-exec"
     gem.summary = %Q{A gem for the javagems system}
     gem.description = %Q{Provides gem-esque support to Java}
     gem.email = "gabriel.gironda@gmail.com"
