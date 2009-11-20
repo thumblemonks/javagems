@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.4.3"
+  s.version = "0.4.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["gabrielg", "jaknowlden"]
@@ -30,7 +30,6 @@ Gem::Specification.new do |s|
      "lib/javagems/classpath_builder.rb",
      "lib/javagems/gem_overrides.rb",
      "lib/rubygems/commands/classpath_command.rb",
-     "lib/rubygems/commands/jeweler_command.rb",
      "test/classpath_command_test.rb",
      "test/gem_overrides_test.rb",
      "test/invalid_test_app/Gemfile",
@@ -68,7 +67,6 @@ Gem::Specification.new do |s|
      "test/invalid_test_app/vendor/gems/specifications/test-gem-four-0.0.0.gemspec",
      "test/invalid_test_app/vendor/gems/specifications/test-gem-one-0.0.0.gemspec",
      "test/invalid_test_app/vendor/gems/specifications/test-gem-two-0.0.0.gemspec",
-     "test/jeweler_command_test.rb",
      "test/test_helper.rb",
      "test/valid_test_app/Gemfile",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/.document",
@@ -135,7 +133,6 @@ Gem::Specification.new do |s|
      "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/helper.rb",
      "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/test_test-gem-two.rb",
      "test/invalid_test_app/vendor/gems/environment.rb",
-     "test/jeweler_command_test.rb",
      "test/test_helper.rb",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/lib/test-gem-four.rb",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/test/helper.rb",
@@ -158,18 +155,15 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<gemcutter>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<riot>, [">= 0"])
     else
       s.add_dependency(%q<gemcutter>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<riot>, [">= 0"])
     end
   else
     s.add_dependency(%q<gemcutter>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<riot>, [">= 0"])
   end
