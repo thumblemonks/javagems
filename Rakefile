@@ -13,7 +13,6 @@ begin
     gem.homepage = "http://www.javagems.org/"
     gem.authors = ["gabrielg", "jaknowlden"]
     gem.add_dependency "gemcutter"
-    gem.add_dependency "jeweler"
     gem.add_dependency "bundler"
     gem.add_development_dependency "riot"
   end
