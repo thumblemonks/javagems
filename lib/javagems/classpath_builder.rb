@@ -31,9 +31,10 @@ module JavaGems
       Bundler.logger = real_logger
     end
 
-    # FIXME - Until we have actual bundler support, use the Gem home source index.
+    # I will find gems in a relative vendor directory and then using the system source, similar to how
+    # Gem Bundler will normally work
     def sources
-      [Bundler::SystemGemSource.instance]
+      [Bundler::DirectorySource.new(:location => 'vendor'), Bundler::SystemGemSource.instance]
     end
 
   end # ClasspathBuilder
