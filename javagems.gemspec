@@ -5,14 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.4.8"
+  s.version = "0.4.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["gabrielg", "jaknowlden"]
   s.date = %q{2009-11-19}
   s.description = %q{Provides gem-esque support to Java}
   s.email = %q{gabriel.gironda@gmail.com}
-  s.executables = ["javagem", "javagem-exec", "jem", "jemc"]
+  s.executables = ["jam", "jamc", "javagem", "javagem-exec"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -23,14 +23,15 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "bin/jam",
+     "bin/jamc",
      "bin/javagem",
      "bin/javagem-exec",
-     "bin/jem",
-     "bin/jemc",
      "javagems.gemspec",
      "lib/javagems.rb",
      "lib/javagems/classpath_builder.rb",
      "lib/javagems/gem_overrides.rb",
+     "lib/javagems/jam.rb",
      "lib/rubygems/commands/classpath_command.rb",
      "test/classpath_command_test.rb",
      "test/gem_overrides_test.rb",
@@ -69,6 +70,7 @@ Gem::Specification.new do |s|
      "test/invalid_test_app/vendor/gems/specifications/test-gem-four-0.0.0.gemspec",
      "test/invalid_test_app/vendor/gems/specifications/test-gem-one-0.0.0.gemspec",
      "test/invalid_test_app/vendor/gems/specifications/test-gem-two-0.0.0.gemspec",
+     "test/jam_test.rb",
      "test/test_helper.rb",
      "test/valid_test_app/Gemfile",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/.document",
@@ -140,6 +142,7 @@ variable for maximum-JavaGems-fun-times.
      "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/helper.rb",
      "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/test_test-gem-two.rb",
      "test/invalid_test_app/vendor/gems/environment.rb",
+     "test/jam_test.rb",
      "test/test_helper.rb",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/lib/test-gem-four.rb",
      "test/valid_test_app/vendor/gems/dirs/test-gem-four/test/helper.rb",
