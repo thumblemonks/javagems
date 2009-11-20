@@ -6,6 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "javagems"
     gem.executables << "javagem"
+    gem.executables << "javagem-exec"
     gem.summary = %Q{A gem for the javagems system}
     gem.description = %Q{Provides gem-esque support to Java}
     gem.email = "gabriel.gironda@gmail.com"
@@ -14,6 +15,7 @@ begin
     gem.add_dependency "gemcutter"
     gem.add_dependency "jeweler"
     gem.add_dependency "bundler"
+    gem.add_dependency "cmdparse"
     gem.add_development_dependency "riot"
   end
   Jeweler::GemcutterTasks.new

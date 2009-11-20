@@ -1,3 +1,5 @@
+require 'bundler'
+
 module JavaGems
   class ClasspathBuilder
     class ClasspathError < RuntimeError; end
@@ -6,7 +8,6 @@ module JavaGems
       with_hijacked_bundler_logging do
         bundler_env = Bundler::Environment.load(gemfile)
         deps = bundler_env.dependencies.map {|dep| dep.to_gem_dependency }
-
         cp = Bundler::Resolver.resolve(deps, sources).collect do |spec|
           (Pathname(spec.full_gem_path) + "lib").expand_path.to_s
         end.join(File::PATH_SEPARATOR)
@@ -28,9 +29,9 @@ module JavaGems
       Bundler.logger = real_logger
     end
 
-    # FIXME - Until we have actual bundler support, use the system source index.
+    # FIXME - Until we have actual bundler support, use the Gem home source index.
     def sources
-      [Bundler::SystemGemSource.instance]
+      [Bundler::DirectorySource.new(:location => Gem.configuration.home)]
     end
 
   end # ClasspathBuilder

@@ -3,6 +3,8 @@ require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
 require 'bundler'
 
+ENV['GEMCUTTER_URL'] = ENV['JAVAGEMS_URL'] || "https://gems.javagems.org/"
+
 module Gem
   DefaultGemConfigName = ".javagemrc"
 
@@ -18,6 +20,7 @@ module Gem
     :gempath  => [File.join(Gem.user_home, ".javagem/java")]
   )
 
+  @configuration = nil # To force Gem to re-read the config
 end
 
 class Gem::AbstractCommand < Gem::Command

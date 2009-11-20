@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+# NOT A GEM PLUGIN BECAUSE I'M CLEARLY TOO INEPT TO
+# WORK WITH OPTPARSE AS IT IS USED IN A GEM PLUGIN.
+require 'pathname'
+$: << Pathname(__FILE__).parent.parent + "lib"
+require 'javagems/gem_overrides'
+require 'javagems/classpath_builder'
+require 'optparse'
+
+if sep = ARGV.index("--")
+  rest = ARGV[(sep + 1)..-1]
+  opts = ARGV.slice(0, sep)
+else
+  rest = ARGV
+  opts = []
+end
+
+options = {}
+parser = OptionParser.new do |opt_parse|
+  opt_parse.banner = <<EOU.gsub(/^\s+/, '')
+  Usage: #{$0} [options] -- command
+  The -- is unnecessary if no options are specified.
+EOU
+
+  opt_parse.on("-m", "--manifest GEMFILE", "Gem manifest file to use") do |m|
+    options[:manifest] = m
+  end
+end
+
+if ARGV.empty?
+  puts parser.to_s
+  exit 1
+else
+  parser.parse(opts)
+  cp_builder = JavaGems::ClasspathBuilder.new
+  cp = cp_builder.classpath_for(options[:manifest])
+  ENV['CLASSPATH'] = ENV['CLASSPATH'] ? "#{cp}#{File::PATH_SEPARATOR}#{ENV['CLASSPATH']}" : cp
+  exec(*rest)
+end
