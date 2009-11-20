@@ -5,32 +5,29 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.4.2"
+  s.version = "0.4.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["gabrielg", "jaknowlden"]
-  s.date = %q{2009-11-14}
+  s.date = %q{2009-11-19}
   s.description = %q{Provides gem-esque support to Java}
   s.email = %q{gabriel.gironda@gmail.com}
-  s.executables = ["javagem", "javagem"]
+  s.executables = ["javagem", "javagem-exec", "javagem", "javagem-exec"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
-     ".gitignore",
-     "LICENSE",
+    ".gitignore",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
-     "Rakefile",
      "VERSION",
      "bin/javagem",
+     "bin/javagem-exec",
      "javagems.gemspec",
      "lib/javagems.rb",
-     "lib/javagems/commands/javagem_command.rb",
+     "lib/javagems/classpath_builder.rb",
      "lib/javagems/gem_overrides.rb",
      "lib/rubygems/commands/classpath_command.rb",
      "lib/rubygems/commands/jeweler_command.rb",
@@ -125,6 +122,35 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{A gem for the javagems system}
+  s.test_files = [
+    "test/classpath_command_test.rb",
+     "test/gem_overrides_test.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-four/lib/test-gem-four.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-four/test/helper.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-four/test/test_test-gem-four.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-one/lib/test-gem-one.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-one/test/helper.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-one/test/test_test-gem-one.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-two/lib/test-gem-two.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/helper.rb",
+     "test/invalid_test_app/vendor/gems/dirs/test-gem-two/test/test_test-gem-two.rb",
+     "test/invalid_test_app/vendor/gems/environment.rb",
+     "test/jeweler_command_test.rb",
+     "test/test_helper.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-four/lib/test-gem-four.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-four/test/helper.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-four/test/test_test-gem-four.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-one/lib/test-gem-one.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-one/test/helper.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-one/test/test_test-gem-one.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-three/lib/test-gem-three.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-three/test/helper.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-three/test/test_test-gem-three.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-two/lib/test-gem-two.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-two/test/helper.rb",
+     "test/valid_test_app/vendor/gems/dirs/test-gem-two/test/test_test-gem-two.rb",
+     "test/valid_test_app/vendor/gems/environment.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

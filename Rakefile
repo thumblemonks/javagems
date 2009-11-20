@@ -15,7 +15,6 @@ begin
     gem.add_dependency "gemcutter"
     gem.add_dependency "jeweler"
     gem.add_dependency "bundler"
-    gem.add_dependency "cmdparse"
     gem.add_development_dependency "riot"
   end
   Jeweler::GemcutterTasks.new
