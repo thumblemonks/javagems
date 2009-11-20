@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
+require 'pathname'
+$: << Pathname(__FILE__).parent.parent + "lib"
+require 'javagems/jam'
 
-custom_classpath = ["-cp", "-classpath"].map do |option|
-  classpath_idx = ARGV.index(option)
-  ARGV.slice!(classpath_idx..(classpath_idx + 1)).last if classpath_idx
-end
-
-ENV["CLASSPATH"] = [ENV["CLASSPATH"], custom_classpath].compact.join(File::PATH_SEPARATOR)
-exec("javagem-exec", "javac", *ARGV)
+ENV["CLASSPATH"], argv = JavaGems::Jam.classpath_from_options(ARGV)
+exec("javagem-exec", "javac", *argv)
