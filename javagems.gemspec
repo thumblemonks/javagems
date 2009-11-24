@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{javagems}
-  s.version = "0.4.10"
+  s.version = "0.4.11"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 1.3.5") if s.respond_to? :required_rubygems_version=
   s.authors = ["gabrielg", "jaknowlden"]
-  s.date = %q{2009-11-20}
+  s.date = %q{2009-11-24}
   s.description = %q{Provides gem-esque support to Java}
   s.email = %q{gabriel.gironda@gmail.com}
   s.executables = ["jam", "jamc", "javagem", "javagem-exec"]

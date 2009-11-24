@@ -10,6 +10,7 @@ begin
     gem.email = "gabriel.gironda@gmail.com"
     gem.homepage = "http://www.javagems.org/"
     gem.authors = ["gabrielg", "jaknowlden"]
+    gem.required_rubygems_version = ">=1.3.5"
     gem.add_dependency "gemcutter"
     gem.add_dependency "bundler"
     gem.add_development_dependency "riot"
